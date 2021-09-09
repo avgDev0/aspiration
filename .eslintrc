@@ -1,0 +1,53 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "commonjs": true,
+    "jest": true,
+    "es2017": true
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-empty": "error",
+    "no-extra-boolean-cast": "warn",
+    "no-irregular-whitespace": "warn",
+    "no-unexpected-multiline": "error",
+    "block-scoped-var": "error",
+    "dot-location": "error",
+    "eqeqeq": "error",
+    "no-else-return": "error",
+    "no-empty-function": "error",
+    "no-multi-spaces": "error",
+    "no-magic-numbers": "error",
+    "no-param-reassign": "error",
+    "no-redeclare": "error",
+    "no-return-assign": "error",
+    "no-self-assign": "warn",
+    "no-self-compare": "error",
+    "no-unused-vars": "error",
+    "no-undefined": "error",
+    "no-use-before-define": "error",
+    "array-bracket-spacing": "warn",
+    "comma-spacing": "warn",
+    "eol-last": "error",
+    "indent": "error",
+    "jsx-quotes": "error",
+    "multiline-ternary": "error",
+    "newline-per-chained-call": "error",
+    "no-multiple-empty-lines": "error",
+    "no-trailing-spaces": "error",
+    "object-curly-newline": "error",
+    "object-property-newline": "error",
+    "arrow-spacing": "error",
+    "no-const-assign": "error",
+    "no-duplicate-imports": "error",
+    "no-useless-rename": "warn",
+    "prefer-destructuring": "warn",
+    "prefer-template": "error",
+    "rest-spread-spacing": "error",
+    
+  }
+}
