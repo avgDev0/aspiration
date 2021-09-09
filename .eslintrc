@@ -3,7 +3,11 @@
     "react-app",
     "react-app/jest",
     "plugin:prettier/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
   ],
   "env": {
     "commonjs": true,
@@ -34,7 +38,7 @@
     "array-bracket-spacing": "warn",
     "comma-spacing": "warn",
     "eol-last": "error",
-    "indent": "error",
+    "indent": ["error", 2],
     "jsx-quotes": "error",
     "multiline-ternary": "error",
     "newline-per-chained-call": "error",
