@@ -2,7 +2,8 @@
   "extends": [
     "react-app",
     "react-app/jest",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
   ],
   "env": {
     "commonjs": true,
@@ -47,7 +48,6 @@
     "no-useless-rename": "warn",
     "prefer-destructuring": "warn",
     "prefer-template": "error",
-    "rest-spread-spacing": "error",
-    
+    "rest-spread-spacing": "error"
   }
 }
