@@ -3,7 +3,7 @@
   "printWidth": 100,
   "bracketSpacing": true,
   "trailingComma": "es5",
-  "jsxSingleQuote": true,
+  "jsxSingleQuote": false,
   "parser": "babel",
   "semi": false,
   "singleQuote": true

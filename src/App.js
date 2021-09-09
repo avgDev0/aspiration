@@ -1,6 +1,6 @@
 import React from 'react'
-import { ThemeProvider, CssBaseline } from '@material-ui/core';
-import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider, CssBaseline } from '@material-ui/core'
+import { createTheme } from '@material-ui/core/styles'
 
 const theme = createTheme({
   pallete: {
@@ -17,7 +17,7 @@ const theme = createTheme({
       main: '#d1c4c4',
     },
   },
-});
+})
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
         </header>
       </div>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App
