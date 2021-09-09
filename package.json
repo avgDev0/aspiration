@@ -24,10 +24,9 @@
     }
   },
   "lint-staged": {
-    "*.+(js|jsx)": [
+    "*.+{js,jsx}": [
       "eslint --fix",
-      "prettier --write",
-      "git push"
+      "prettier --write"
     ]
   },
   "browserslist": {
