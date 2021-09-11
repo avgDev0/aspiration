@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    height: '30%',
+    flexGrow: 0,
     width: '100%',
     margin: theme.spacing(2),
   },
@@ -27,7 +27,7 @@ export default function CardHeader({ topic, stargazerCount }) {
   return (
     <>
       <Grid className={classes.header} container alignItems="center">
-        <Grid item xs={1}>
+        <Grid item className={classes.avatarContainer} xs={1}>
           <Avatar className={classes.avatar}>{topic.charAt(0).toLowerCase()}</Avatar>
         </Grid>
         <Grid item xs={8}>
