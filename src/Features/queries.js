@@ -5,6 +5,12 @@ export const QUERY_GET_TOPIC = gql`
     topic(name: $topic) {
       name
       stargazerCount
+      stargazers(first: 10) {
+        nodes {
+          name
+          avatarUrl
+        }
+      }
     }
   }
 `
