@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import { createTheme } from '@material-ui/core/styles'
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
+import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
 import Wrapper from './components/Wrapper'
+import TopicCardWithData from './Features/TopicCardWithData'
 
 const theme = createTheme({
   pallete: {
@@ -21,35 +23,35 @@ const theme = createTheme({
   },
 })
 
-const client = new ApolloClient({
+const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
+})
+
+const authLink = setContext((_, { headers }) => {
+  const token = process.env.REACT_APP_GITHUB_KEY
+
+  return {
+    headers: {
+      ...headers,
+      // eslint-disable-next-line multiline-ternary
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  }
+})
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
-  headers: {
-    Authorization: `bearer ${process.env.REACT_APP_GITHUB_KEY}`,
-  },
 })
 
 function App() {
+  const [topic] = useState('react')
   return (
     <ThemeProvider theme={theme}>
       <ApolloProvider client={client}>
         <CssBaseline />
         <Wrapper>
-          <div className="App">
-            <header className="App-header">
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-          </div>
+          <TopicCardWithData topic={topic} />
         </Wrapper>
       </ApolloProvider>
     </ThemeProvider>
