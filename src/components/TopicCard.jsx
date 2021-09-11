@@ -1,14 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Paper,
-  Card,
-  Grid,
-  Typography,
-  Avatar,
-  CardContent,
-  CircularProgress,
-} from '@material-ui/core'
+import { Paper, Card, Grid, CardContent, CircularProgress, Divider } from '@material-ui/core'
+import CardHeader from './CardHeader'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => {
@@ -54,17 +47,8 @@ export default function TopicCard({ data, loading, error }) {
   return (
     <Card className={classes.container} elevation={4}>
       <Paper className={classes.paper}>
-        <Grid className={classes.header} container alignItems="center">
-          <Grid item xs={1}>
-            <Avatar className={classes.avatar}>{topicName.charAt(0).toLowerCase()}</Avatar>
-          </Grid>
-          <Grid item xs={7}>
-            <Typography variant="h5">{topicName}</Typography>
-          </Grid>
-          <Grid item xs={4}>
-            <Typography>{stargazerCount}</Typography>
-          </Grid>
-        </Grid>
+        <CardHeader topic={topicName} stargazerCount={stargazerCount} />
+        <Divider variant="middle" />
         <Grid item xs={12}>
           <CardContent>Testing content</CardContent>
         </Grid>
