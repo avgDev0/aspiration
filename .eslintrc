@@ -40,7 +40,6 @@
     "eol-last": "error",
     "indent": ["error", 2],
     "jsx-quotes": "error",
-    "multiline-ternary": "error",
     "newline-per-chained-call": "error",
     "no-multiple-empty-lines": "error",
     "no-trailing-spaces": "error",
