@@ -7,7 +7,7 @@ import Wrapper from './components/Wrapper'
 import TopicCardWithData from './Features/TopicCardWithData'
 
 const theme = createTheme({
-  pallete: {
+  palette: {
     primary: {
       main: '#f1eaea',
     },

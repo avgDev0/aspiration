@@ -30,10 +30,10 @@ export default function CardHeader({ topic, stargazerCount }) {
         <Grid item className={classes.avatarContainer} xs={1}>
           <Avatar className={classes.avatar}>{topic.charAt(0).toLowerCase()}</Avatar>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={7}>
           <Typography variant="h5">{topic}</Typography>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Typography className={classes.stargazerCount}>{`Starred ${stargazerCount} ${
             stargazerCount > 1 ? 'times' : 'time'
           }`}</Typography>

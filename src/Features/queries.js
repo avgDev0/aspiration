@@ -5,6 +5,9 @@ export const QUERY_GET_TOPIC = gql`
     topic(name: $topic) {
       name
       stargazerCount
+      relatedTopics(first: 10) {
+        name
+      }
     }
   }
 `
