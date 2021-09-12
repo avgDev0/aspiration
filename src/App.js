@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/client'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { useApolloClient } from './hooks'
 import Wrapper from './components/Wrapper'
-import TopicCardWithData from './Features/TopicCardWithData'
+import TopicCardWithData from './Features/TopicCardWithData/TopicCardWithData'
 
 const theme = createTheme({
   palette: {
@@ -13,7 +13,7 @@ const theme = createTheme({
       main: '#f1eaea',
     },
     secondary: {
-      main: '#c5e1a5',
+      main: '#505c43',
     },
     warning: {
       main: '#d32f2f',
