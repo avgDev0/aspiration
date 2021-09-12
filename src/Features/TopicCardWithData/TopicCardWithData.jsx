@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/client'
 import { useParams } from 'react-router-dom'
-import { QUERY_GET_TOPIC } from './queries'
+import { QUERY_GET_TOPIC } from '../queries'
 import TopicCard from '../components/TopicCard'
 
 export default function TopicCardWithData() {
