@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => {
   return {
     container: {
       width: '35%',
-      minHeight: theme.spacing(24), //* About 200px
+      minHeight: theme.spacing(13), //* About 100px
       display: 'flex',
       flexDirection: 'column',
     },
@@ -20,9 +20,12 @@ const useStyles = makeStyles((theme) => {
     content: {
       flexGrow: 1,
       width: 'auto',
-      backgroundColor: theme.palette.primary.main,
       margin: theme.spacing(1),
       padding: theme.spacing(1),
+
+      '&:last-child': {
+        paddingBottom: 0,
+      },
     },
     errorContainer: {
       width: '100%',
