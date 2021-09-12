@@ -37,3 +37,5 @@ If any error occurs then an error will be displayed in the screen. It will conta
 - Replace the single stargazer counter for a more elaborated component, maybe one showing the avatars of the (4 or 5 first) stargazers ([implementation example](https://material-ui.com/components/avatars/#image-avatars)). That would make the app look more complete from my standpoint.
 - Add a searching functionality so we're not tight to whatever topics are related to the one we're currently viewing.
 - Add the ability to display more then one topic card at a time
+- There's a known issue in the repo: even though husky is installed and a .husky folder containing a pre-commit hook exists it doesn't get executed when the code is downloaded in a new machine (we need to 'rerun' husky's config after the installation of the package, maybe changing the start script to include that setup?), I would fix that issue before thinking on collaborating
+- .eslint file contains a very basic set of rules, some of them might be revisited to properly configure them according to what we prefer.
