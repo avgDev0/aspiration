@@ -8,7 +8,12 @@ import RelatedTopics from './RelatedTopics'
 const useStyles = makeStyles((theme) => {
   return {
     container: {
-      width: '35%',
+      [theme.breakpoints.up('sm')]: {
+        width: '35%',
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: '90%',
+      },
       minHeight: theme.spacing(13), //* About 100px
       display: 'flex',
       flexDirection: 'column',
