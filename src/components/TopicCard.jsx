@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-export default function TopicCard({ data, loading, error }) {
+export default function TopicCard({ data, loading, error, onRelatedClick }) {
   const classes = useStyles()
   if (loading) {
     return <CircularProgress color="secondary" />
@@ -69,7 +69,7 @@ export default function TopicCard({ data, loading, error }) {
       <CardHeader topic={topicName} stargazerCount={stargazerCount} />
       <Divider variant="middle" />
       <CardContent className={classes.content}>
-        <RelatedTopics topics={relatedTopics} />
+        <RelatedTopics topics={relatedTopics} onClick={onRelatedClick} />
       </CardContent>
     </Card>
   )
@@ -79,4 +79,5 @@ TopicCard.propTypes = {
   data: PropTypes.object,
   loading: PropTypes.bool,
   error: PropTypes.bool,
+  onRelatedClick: PropTypes.func,
 }

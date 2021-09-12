@@ -10,12 +10,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function RelatedTopics({ topics }) {
+export default function RelatedTopics({ topics, onClick }) {
   const classes = useStyles()
   return (
     <>
       {topics.map(({ name }) => (
-        <Chip className={classes.chip} clickable key={name} label={name} />
+        <Chip
+          className={classes.chip}
+          clickable
+          key={name}
+          label={name}
+          onClick={() => onClick(name)}
+        />
       ))}
     </>
   )
@@ -27,4 +33,5 @@ RelatedTopics.propTypes = {
       name: PropTypes.string,
     })
   ).isRequired,
+  onClick: PropTypes.func.isRequired,
 }

@@ -45,13 +45,13 @@ const client = new ApolloClient({
 })
 
 function App() {
-  const [topic] = useState('react')
+  const [topic, setTopic] = useState('react')
   return (
     <ThemeProvider theme={theme}>
       <ApolloProvider client={client}>
         <CssBaseline />
         <Wrapper>
-          <TopicCardWithData topic={topic} />
+          <TopicCardWithData topic={topic} changeTopic={setTopic} />
         </Wrapper>
       </ApolloProvider>
     </ThemeProvider>
