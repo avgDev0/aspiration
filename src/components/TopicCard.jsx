@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, CardContent, CircularProgress, Typography, Divider } from '@material-ui/core'
+import { Card, CardContent, CircularProgress, Divider } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import CardHeader from './CardHeader'
 import RelatedTopics from './RelatedTopics'
+import Error from './Error'
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -47,15 +48,7 @@ export default function TopicCard({ data, loading, error }) {
   if (loading) {
     return <CircularProgress color="secondary" />
   } else if (error) {
-    return (
-      <Card className={classes.container} elevation={4} raised>
-        <CardContent className={classes.errorContainer}>
-          <Typography variant="h4" color="error">
-            {`There's been an error, please try reloading the page (${error.message})`}
-          </Typography>
-        </CardContent>
-      </Card>
-    )
+    return <Error message={error.message} classes={classes} />
   }
 
   const {
