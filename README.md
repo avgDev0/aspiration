@@ -7,6 +7,17 @@ For this project I used the following libraries/packages:
 - Apollo as a GraphQL client
 - Prettier and ESLint as code formatter and linter
 - Husky and lint-staged as tools to add a pretty simple pre-commit hook
+- react-router-dom for routing
+
+## Code structuring
+
+- index.js file is the entry point to our app, it only 'initializes' our HashRouter component and our App.js file
+- hooks.js is intended to store our custom hooks trough out the app, for now it only include the useApolloClient hook that only returns an instance of the apollo client (this might change, if we start to get too much and/or more complex hooks we might want to create a folder instead and store them there under single files)
+- App.js is our app's setup component, we'll introduce our MUI theme, our apollo client and our Switch (router component) for our app besides a couple of extra configs
+---
+Under the src folder we'll find:
+- components folder: is intended for storing all the UI components our app Features need
+- Features folder: is intended for storing our functionality components, for example, our TopicCardWithData component is meant to be some sort of 'wrapper' that would provide the data fetched from the Github GraphQL API and pass that to the TopicCard component that will then display the information to our user.
 
 ## How to run and test the app
 
