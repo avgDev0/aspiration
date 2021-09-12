@@ -12,10 +12,6 @@ const useStyles = makeStyles((theme) => {
       minHeight: theme.spacing(24), //* About 200px
       display: 'flex',
       flexDirection: 'column',
-
-      '&:last-child': {
-        paddingBottom: 0, // TODO: this ain't working, try it with root classes
-      },
     },
     paper: {
       width: '100%',
@@ -38,7 +34,7 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-export default function TopicCard({ data, loading, error, onRelatedClick }) {
+export default function TopicCard({ data, loading, error }) {
   const classes = useStyles()
   if (loading) {
     return <CircularProgress color="secondary" />
@@ -54,12 +50,6 @@ export default function TopicCard({ data, loading, error, onRelatedClick }) {
     )
   }
 
-  console.log({
-    data,
-    loading,
-    error,
-  })
-
   const {
     topic: { name: topicName, stargazerCount, relatedTopics },
   } = data
@@ -69,7 +59,7 @@ export default function TopicCard({ data, loading, error, onRelatedClick }) {
       <CardHeader topic={topicName} stargazerCount={stargazerCount} />
       <Divider variant="middle" />
       <CardContent className={classes.content}>
-        <RelatedTopics topics={relatedTopics} onClick={onRelatedClick} />
+        <RelatedTopics topics={relatedTopics} />
       </CardContent>
     </Card>
   )
@@ -79,5 +69,4 @@ TopicCard.propTypes = {
   data: PropTypes.object,
   loading: PropTypes.bool,
   error: PropTypes.bool,
-  onRelatedClick: PropTypes.func,
 }

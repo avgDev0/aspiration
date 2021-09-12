@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import { createTheme } from '@material-ui/core/styles'
-import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
-import { setContext } from '@apollo/client/link/context'
+import { ApolloProvider } from '@apollo/client'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { useApolloClient } from './hooks'
 import Wrapper from './components/Wrapper'
 import TopicCardWithData from './Features/TopicCardWithData'
 
@@ -23,35 +24,18 @@ const theme = createTheme({
   },
 })
 
-const httpLink = createHttpLink({
-  uri: 'https://api.github.com/graphql',
-})
-
-const authLink = setContext((_, { headers }) => {
-  const token = process.env.REACT_APP_GITHUB_KEY
-
-  return {
-    headers: {
-      ...headers,
-      // eslint-disable-next-line multiline-ternary
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  }
-})
-
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-})
-
 function App() {
-  const [topic, setTopic] = useState('react')
+  const apolloClient = useApolloClient()
+
   return (
     <ThemeProvider theme={theme}>
-      <ApolloProvider client={client}>
+      <ApolloProvider client={apolloClient}>
         <CssBaseline />
         <Wrapper>
-          <TopicCardWithData topic={topic} changeTopic={setTopic} />
+          <Switch>
+            <Redirect exact from="/" to="/topic/react" push />
+            <Route exact path="/topic/:topic" component={TopicCardWithData} />
+          </Switch>
         </Wrapper>
       </ApolloProvider>
     </ThemeProvider>
