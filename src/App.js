@@ -33,8 +33,8 @@ function App() {
         <CssBaseline />
         <Wrapper>
           <Switch>
-            <Redirect exact from="/" to="/topic/react" push />
-            <Route exact path="/topic/:topic" component={TopicCardWithData} />
+            <Redirect exact from="/" to="/react" push />
+            <Route exact path="/:topic" component={TopicCardWithData} />
           </Switch>
         </Wrapper>
       </ApolloProvider>
